@@ -1,0 +1,19 @@
+# https://atcoder.jp/contests/abc138/tasks/abc138_c
+
+# -*- coding: utf-8 -*-
+
+# 整数の入力
+N = int(raw_input())
+
+# 空白区切りの整数を取得
+li = map(int, raw_input().split())
+
+# 降順ソート
+li.sort(reverse=True)
+
+# 最小値同士を計算した結果を末尾に格納
+for i in xrange(N-1,0,-1):
+    tmp = float(li.pop(i) + li.pop(i-1))/2
+    li.append(tmp)
+
+print tmp
